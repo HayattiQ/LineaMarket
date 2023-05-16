@@ -1,10 +1,4 @@
 ERC721A/=lib/ERC721A/contracts/
-closedsea/=lib/closedsea/src/
-ds-test/=lib/forge-std/lib/ds-test/src/
-erc4626-tests/=lib/closedsea/lib/openzeppelin-contracts/lib/erc4626-tests/
-erc721a-upgradeable/=lib/closedsea/lib/erc721a-upgradeable/contracts/
-erc721a/=lib/closedsea/lib/erc721a/contracts/
-forge-std/=lib/forge-std/src/
-openzeppelin-contracts-upgradeable/=lib/closedsea/lib/openzeppelin-contracts-upgradeable/
+ds-test/=lib/openzeppelin-contracts/lib/forge-std/lib/ds-test/src/
+forge-std/=lib/openzeppelin-contracts/lib/forge-std/src/
 openzeppelin-contracts/=lib/openzeppelin-contracts/
-operator-filter-registry/=lib/closedsea/lib/operator-filter-registry/
