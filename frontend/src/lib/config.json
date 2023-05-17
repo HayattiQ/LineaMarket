@@ -1,14 +1,12 @@
 {
-  "CONTRACT_ADDRESS": "0x12561d8BB21f1bEFd17Ec06F1C092b2CBEC82085",
-  "SCAN_LINK": "https://etherscan.io/address/0x12561d8BB21f1bEFd17Ec06F1C092b2CBEC82085",
-  "NETWORK": "0x1",
+  "CONTRACT_ADDRESS": "0xf2c218fB8749973444EF6E0315d1B0b13Aed75D8",
+  "SCAN_LINK": "https://explorer.goerli.linea.build/address/0xf2c218fB8749973444EF6E0315d1B0b13Aed75D8/contracts#address-tabs",
+  "NETWORK": "0x59140",
   "NETWORK_NAME": "Ethereum",
-  "NFT_NAME": "ENISHI",
-  "MAX_SUPPLY": 3333,
+  "NFT_NAME": "LineaNinja",
+  "MAX_SUPPLY": 1000,
   "SALE_TYPE_LIST": {
-    "0": { "name": "AllowList", "AllowList": true },
-    "1": { "name": "Presale2(FCFS)", "AllowList": true },
-    "2": { "name": "PublicSale", "AllowList": false }
+    "0": { "name": "FreeMint", "AllowList": false }
   },
   "Web3AuthClientID": {
     "0x1": "BB5Qj3MEg55cv2_eQBrM9SsLr4x3Gf99l1y-jZ6IhT7q0fARD3fxX-df6nXrb599tj29EttEIJi935gZrZ4-N6U",
