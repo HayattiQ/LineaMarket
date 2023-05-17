@@ -63,18 +63,6 @@ export default function MintNFT({
     }
   }, [wallet]);
 
-  useEffect(() => {
-    if (amount > 0) {
-      setMintFee(ContractValue.cost.mul(amount));
-    }
-  }, [amount]);
-
-  useEffect(() => {
-    if (completeTX === true) {
-      stepChange(3);
-      setWaitTX(false);
-    }
-  }, [completeTX]);
 
   const readyToTransact = async () => {
     if (!wallet) {
@@ -105,7 +93,6 @@ export default function MintNFT({
       stepChange(2);
       setError("");
 
-      const options = { value: mintFee };
       let nftTx;
       if (config.SALE_TYPE_LIST[saleType]["AllowList"]) {
         if (!merkleData) {
@@ -118,8 +105,7 @@ export default function MintNFT({
           amount,
           merkleData.presaleMax,
           merkleData.hexProof,
-          saleType,
-          options
+          saleType
         ));
 
 
@@ -127,16 +113,17 @@ export default function MintNFT({
           amount,
           merkleData.presaleMax,
           merkleData.hexProof,
-          saleType,
-          options
+          saleType
         );
       } else {
-        nftTx = await nftContract.publicMint(account.address, amount, options);
+        nftTx = await nftContract.publicMint(account.address, amount);
       }
       console.log("Minting....", nftTx.hash);
 
       let tx = await nftTx.wait();
+      stepChange(3);
       setCompleteTX(true);
+      setWaitTX(false);
       console.log(tx);
     } catch (e: unknown) {
       setWaitTX(false);
@@ -156,7 +143,7 @@ export default function MintNFT({
   const MintButton = () => {
     return (
       <>
-        {completeTX && (
+        {completeTX === true && (
           <>
             <Notification color="teal" title="Mint is success!" disallowClose>
               See{" "}
@@ -228,7 +215,7 @@ export default function MintNFT({
           </ActionIcon>
         </Group>
         <Text mt="md" align="center">
-          Mint Price:{ethers.utils.formatEther(mintFee)}ETH
+          FreeMint
         </Text>
       </Card>
       {waitTX ? (

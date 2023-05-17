@@ -21,8 +21,6 @@ export type ContractValue = {
   totalSupply: BigNumber;
   maxSupply: BigNumber;
   mintable: boolean;
-  paused: boolean;
-  phaseOpened: boolean;
   cost: BigNumber;
   maxPerTx: number;
 };
@@ -83,29 +81,21 @@ export default function ConnectWallet({ stepChange, saleType }: Props) {
       let totalSupply: BigNumber,
         maxSupply: BigNumber,
         mintable: boolean,
-        phaseOpened: boolean,
-        cost: BigNumber,
-        paused: boolean;
+        cost: BigNumber;
       totalSupply = await nftContract.callStatic.totalSupply();
       maxSupply = await nftContract.callStatic.MAX_SUPPLY();
       mintable = await nftContract.callStatic.mintable();
-      paused = await nftContract.callStatic.paused();
 
       if (config.SALE_TYPE_LIST[saleType]["AllowList"]) {
-        phaseOpened = await nftContract.callStatic.presalePhase(saleType);
         cost = await nftContract.callStatic.presaleCost(saleType);
       } else {
-        phaseOpened = await nftContract.callStatic.publicSale();
-        cost = await nftContract.callStatic.publicCost();
+        cost = BigNumber.from(0);
       }
 
       const contact = {
         totalSupply,
         maxSupply,
         mintable,
-        paused,
-        phaseOpened,
-        cost,
         maxPerTx: config.MAX_MINT_AMOUNT_PUBLIC,
       };
       setContractValue(contact);
@@ -124,9 +114,7 @@ export default function ConnectWallet({ stepChange, saleType }: Props) {
     }
     return (
       <Grid.Col xs={12}>
-        {contractValue?.mintable &&
-          !contractValue.paused &&
-          contractValue.phaseOpened && (
+        {contractValue?.mintable &&(
             <MintNFT
               stepChange={stepChange}
               setError={setError}
@@ -159,9 +147,7 @@ export default function ConnectWallet({ stepChange, saleType }: Props) {
               </span>
             </Text>
             <Text align="center">
-              {contractValue?.mintable &&
-              !contractValue.paused &&
-              contractValue.phaseOpened
+              {contractValue?.mintable
                 ? "MINT LIVE"
                 : "Mint is Closed"}
             </Text>

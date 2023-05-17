@@ -1,7 +1,7 @@
 {
   "CONTRACT_ADDRESS": "0xf2c218fB8749973444EF6E0315d1B0b13Aed75D8",
   "SCAN_LINK": "https://explorer.goerli.linea.build/address/0xf2c218fB8749973444EF6E0315d1B0b13Aed75D8/contracts#address-tabs",
-  "NETWORK": "59140",
+  "NETWORK": "0xe704",
   "NETWORK_NAME": "Ethereum",
   "NFT_NAME": "LineaNinja",
   "MAX_SUPPLY": 1000,

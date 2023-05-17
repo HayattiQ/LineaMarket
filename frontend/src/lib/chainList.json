@@ -12,7 +12,7 @@
     "rpcUrl": "https://eth-goerli.g.alchemy.com/v2/0GFh_Y9AGXJD1a5EivrnzSmrDGABLXZO"
   },
   {
-    "id": "59140",
+    "id": "0xe704",
     "token": "ETH",
     "label": "Linea-Goerli",
     "rpcUrl": "https://rpc.goerli.linea.build"
