@@ -136,7 +136,7 @@ export default function ConnectWallet({ stepChange, saleType }: Props) {
             >
               <span>
                 {contractValue?.totalSupply.toString()} /{" "}
-                {contractValue?.maxSupply.toString()}
+                1000
               </span>
             </Text>
             <Text align="center">
