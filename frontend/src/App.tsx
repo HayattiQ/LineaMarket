@@ -48,7 +48,7 @@ const web3Onboard = init({
 });
 
 function App() {
-  let saleType: keyof typeof config.SALE_TYPE_LIST = "2";
+  let saleType: keyof typeof config.SALE_TYPE_LIST = "0";
   if (import.meta.env.VITE_SALE_TYPE) {
     saleType = import.meta.env.VITE_SALE_TYPE;
   } else {
