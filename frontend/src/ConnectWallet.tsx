@@ -21,7 +21,6 @@ export type ContractValue = {
   totalSupply: BigNumber;
   maxSupply: BigNumber;
   mintable: boolean;
-  cost: BigNumber;
   maxPerTx: number;
 };
 
@@ -80,17 +79,11 @@ export default function ConnectWallet({ stepChange, saleType }: Props) {
       );
       let totalSupply: BigNumber,
         maxSupply: BigNumber,
-        mintable: boolean,
-        cost: BigNumber;
+        mintable: boolean;
       totalSupply = await nftContract.callStatic.totalSupply();
       maxSupply = await nftContract.callStatic.MAX_SUPPLY();
       mintable = await nftContract.callStatic.mintable();
 
-      if (config.SALE_TYPE_LIST[saleType]["AllowList"]) {
-        cost = await nftContract.callStatic.presaleCost(saleType);
-      } else {
-        cost = BigNumber.from(0);
-      }
 
       const contact = {
         totalSupply,
