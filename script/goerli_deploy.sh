@@ -1,4 +1,1 @@
-### run from contracts directory in order to get .env file vars
-forge script \
- --broadcast --rpc-url linea_goerli --optimizer-runs 20 \
- script/LINEA.s.sol:Deploy
+forge create --private-key $PRIVATE_KEY_LINEA_PROD --rpc-url https://rpc.goerli.linea.build/ src/LineaNinja.sol:LineaNinja

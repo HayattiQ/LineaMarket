@@ -15,7 +15,7 @@ error InvalidMerkleProof();
 error AlreadyClaimedMax();
 error MintAmountOver();
 
-contract LineaFox is
+contract LineaNinja is
     ERC721A,
     IERC4906,
     ERC721AQueryable,
@@ -23,7 +23,7 @@ contract LineaFox is
     ERC2981
 {
     uint256 private constant PUBLIC_MAX_PER_TX = 1;
-    uint256 public constant MAX_SUPPLY = 2000;
+    uint256 public constant MAX_SUPPLY = 10000;
     string private constant BASE_EXTENSION = ".json";
 
     bool public callerIsUserFlg = false;
@@ -31,11 +31,11 @@ contract LineaFox is
     bool public renounceOwnerMintFlag = false;
 
     string private baseURI =
-        "https://arweave.net/J011mUmRKC-6bHnuowOTmAiuIJFI91pqZ_dQfVhkliE/";
+        "https://arweave.net/9O3lwzBeZ_NMYGBWwp1gNhuVYkz4D5PuCAGWDjrgFVo";
 
     mapping(uint256 => string) private metadataURI;
 
-    constructor() ERC721A("LineaFox", "LINEAFOX") {
+    constructor() ERC721A("LineaNinja", "LINEANINJA") {
         callerIsUserFlg = true;
         _grantRole(
             DEFAULT_ADMIN_ROLE,
