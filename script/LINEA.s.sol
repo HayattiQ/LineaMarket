@@ -9,7 +9,7 @@ contract Deploy is Script {
     function run() public {
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY_LINEA_DEV");
         vm.startBroadcast(deployerPrivateKey);
-        LineaFox nft = new LineaFox(true);
+        LineaFox nft = new LineaFox();
         vm.stopBroadcast();
     }
 }

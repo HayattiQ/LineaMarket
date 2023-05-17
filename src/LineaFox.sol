@@ -35,8 +35,8 @@ contract LineaFox is
 
     mapping(uint256 => string) private metadataURI;
 
-    constructor(bool _callerIsUserFlg) ERC721A("LineaFox", "LINEAFOX") {
-        callerIsUserFlg = _callerIsUserFlg;
+    constructor() ERC721A("LineaFox", "LINEAFOX") {
+        callerIsUserFlg = true;
         _grantRole(
             DEFAULT_ADMIN_ROLE,
             0xC7f2Cf4845C6db0e1a1e91ED41Bcd0FcC1b0E141
